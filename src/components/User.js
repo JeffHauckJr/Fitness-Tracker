@@ -7,7 +7,7 @@ import {
 
 const User = () => {
     return (
-        <div style={{top: 'auto', bottom: 0,}}>
+        <div id="footer-div">
 			<AppBar>
 			<Toolbar>
 				<Link to={SIGNIN}>Sign In</Link>

@@ -10,25 +10,33 @@ import {
 
 import  HomeContent  from './Home'
 import  ActivitiesContent  from './Activities'
-import  RoutineContent  from './Routines'
+import  Routines  from './Routines'
 import  MyRoutineContent  from './MyRoutines'
 import  SignINContent  from './SignIn'
 import  RegistrationContent  from './Register'
 
-const Pages = () => {
+const Pages = (props) => {
+	const {routines, setRoutines} = props
+	const {activities, setActivities} = props
 	return (
 		<>
 			<Route path={HOME_ROUTE}>
 				<HomeContent />
 			</Route>
 			<Route path={ROUTINES_ROUTE}>
-				<RoutineContent />
+				<Routines
+				routines={routines}
+				setRoutines={setRoutines}
+				/>
 			</Route>
 			<Route path={MY_ROUTINES_ROUTE}>
 				<MyRoutineContent />
 			</Route>
 			<Route path={ACTIVITIES_ROUTE}>
-				<ActivitiesContent />
+				<ActivitiesContent 
+				activities={activities}
+				setActivities={setActivities}
+				/>
 			</Route>
 			<Route path={SIGNIN}>
 				<SignINContent />

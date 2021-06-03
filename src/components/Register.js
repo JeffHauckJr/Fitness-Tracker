@@ -1,4 +1,6 @@
-
+const RegisterFunction = async () => {
+    //if else creates and stores token for new info if info matches another token throw Alert message
+}
 
 const RegistrationContent = () => {
 	return (
@@ -12,10 +14,9 @@ const RegistrationContent = () => {
                 <p>Password</p>
                 <input type='text'></input>
                 <br></br>
-                <button>Submit</button>
+                <button onClick={<RegisterFunction />}>Submit</button>
 
             </main>
-
         </div>
 	)
 }

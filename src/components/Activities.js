@@ -1,8 +1,43 @@
+import {useEffect} from 'react'
+import { getActivities } from "../api";
 
 
-const ActivitiesContent = () => {
+const ActivitiesContent = ({activities, setActivities}) => {
+	useEffect(() => {
+		getActivities()
+		  .then((activities) => {
+			setActivities(activities);
+		  })
+		  .catch((error) => {
+			  console.error(error)
+		  });
+	  });
 	return (
-		<h1>Activities</h1>
+		<>
+		<div className="page-head">
+		  <h1>Activities</h1>
+		</div>
+		<div id="routines-container">
+		  {activities.map(
+			({
+			  id,
+			  name,
+			  description
+			}) => (
+			  <div key={id} className="routine-cards">
+				<div className="routine-card">
+				  <div className="card-name">
+					Activity Name:<p>{name}</p>
+				  </div>
+				  <div className="card-description">
+					Description:<p>{description}</p>
+				  </div>
+				</div>
+			  </div>
+			)
+		  )}
+		</div>
+	  </>
 	)
 }
 

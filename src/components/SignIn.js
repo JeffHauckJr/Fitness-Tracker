@@ -1,3 +1,9 @@
+const SignInFunction = () => {
+    //If else check for same credentials if match store token if not throw alert message
+
+}
+
+
 const SignINContent = () => {
 	return (
         <div>
@@ -10,8 +16,8 @@ const SignINContent = () => {
                 <p>Password</p>
                 <input type='text'></input>
                 <br></br>
-                <button>Submit</button>
-
+                <button onClick={<SignInFunction />}>Submit</button>
+            
             </main>
 
         </div>

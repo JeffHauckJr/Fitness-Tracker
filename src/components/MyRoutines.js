@@ -1,11 +1,11 @@
 const CreateRoutine = () => {
 	return (
-		<div>
+		<>
 			<p>Name</p>
 			<input type="text">Name</input>
 			<p>Goal</p>
 			<input type="text">Goal</input>
-		</div>
+		</>
 	)
 }
 

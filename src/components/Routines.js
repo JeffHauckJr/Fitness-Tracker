@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react'
 import { getRoutines } from '../api'
+import "./routines.css"
 
 const Routines = ({ routines, setRoutines }) => {
 	useEffect(() => {
@@ -29,11 +30,14 @@ const Routines = ({ routines, setRoutines }) => {
 			}) => (
 			  <div key={id} className="routine-cards">
 				<div className="routine-card">
+				  <div>
+					<b>UserName:</b><p>{creatorName}</p>
+				  </div>
 				  <div className="card-name">
-					Routine Name:<p>{name}</p>
+					<b>Routine Name:</b><p>{name}</p>
 				  </div>
 				  <div className="card-goal">
-					Goal:<p>{goal}</p>
+					<b>Goal:</b><p>{goal}</p>
 				  </div>
 				</div>
 			  </div>

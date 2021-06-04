@@ -7,11 +7,12 @@ import {
 
 const User = () => {
     return (
-        <div id="footer-div">
-			<AppBar>
+        <div id="footer">
+			<AppBar position="absolute" >
+				<h1>I am user</h1>
 			<Toolbar>
-				<Link to={SIGNIN}>Sign In</Link>
-				<Link to={REGISTER}>Register</Link>
+				<Link to={SIGNIN} style={{textDecoration: "none"}}>Sign In</Link>
+				<Link to={REGISTER} style={{textDecoration: "none"}}>Register</Link>
 			</Toolbar>
 		</AppBar>
 		</div>

@@ -1,4 +1,4 @@
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 import { getActivities } from "../api";
 
 
@@ -27,10 +27,10 @@ const ActivitiesContent = ({activities, setActivities}) => {
 			  <div key={id} className="routine-cards">
 				<div className="routine-card">
 				  <div className="card-name">
-					Activity Name:<p>{name}</p>
+					<b>Name:</b><p>{name}</p>
 				  </div>
 				  <div className="card-description">
-					Description:<p>{description}</p>
+					<b>Description:</b><p>{description}</p>
 				  </div>
 				</div>
 			  </div>

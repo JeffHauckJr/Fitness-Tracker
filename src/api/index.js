@@ -30,3 +30,37 @@ export async function getRoutines() {
     }
   }
 
+export async function registerUser(username, password) {
+  try {
+    const {data} = await axios.get(`${ BASE }/users/register`, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        username: username,
+        password: password
+      })
+    })
+    return data
+  } catch (error) {
+        console.error(error)
+  }
+}
+export async function signInUser(username, password) {
+  try {
+    const {data} = await axios.get(`${BASE}/users/login`, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        username: username,
+        password: password
+      })
+    }) 
+    return data
+  } catch (error) {
+    console.error(error)
+  } 
+}

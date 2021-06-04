@@ -21,10 +21,9 @@ function App() {
 		  name: '',
 		  description: ''
 	  }])
-	
 	return (
 		<div className="App">
-			<header className='header'>
+			<header className='header' style={{backgroundColor: 'black'}}>
 				<Navigation />
 			</header>
 			<main style={{ marginTop: "100px", display: 'flex' , justifyContent: 'center' }}>
@@ -34,8 +33,8 @@ function App() {
 				activities={activities}
 				setActivities={setActivities} />
 			</main>
-      		<footer>
-        			<User />
+      		<footer className="user-footer" style={{position: 'absolute'}}>
+        			{/* <User /> */}
      		 </footer>
 		</div>
 	);

@@ -1,25 +1,33 @@
-const CreateRoutine = () => {
-	return (
-		<>
-			<p>Name</p>
-			<input type="text">Name</input>
-			<p>Goal</p>
-			<input type="text">Goal</input>
-		</>
-	)
-}
+import { useState, useEffect } from "react";
+import { getMyRoutines } from "../api";
+const BASE = 'https://fitnesstrac-kr.herokuapp.com/api';
 
+
+ 
 const MyRoutineContent = () => {
-	return (
-		<div>
-			<header>
-				<h1>My Routines</h1>
-			</header>
-			<main>
-				{/* <CreateRoutine /> */}
-			</main>
-		</div>
-	)
-}
+  
+  const MyRoutineCard = async () => {
+  const [id, setId] = useState()
+  const [username, setUsername] = useState()
 
-export default MyRoutineContent
+  useEffect(() => {
+    getMyRoutines()
+      .then(() => {
+        setId(id)
+      })
+      .then(() => {
+        setUsername(username)
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  })
+} 
+  return (
+    <div>
+      <button onClick={() => { window.location.href = "/create-routines"}} type={'submit'} onSubmit={(event) => {event.preventDefault();}}>Create Routines</button>
+    </div>
+  );
+};
+
+export default MyRoutineContent;

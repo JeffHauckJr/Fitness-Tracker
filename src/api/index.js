@@ -22,13 +22,19 @@ export async function getRoutines() {
   }
 
   export async function getMyRoutines() {
-    try {
-      const { data } = await axios.get(`${ BASE }/myroutines`);
-      return data;
-    } catch (error) {
-      throw error;
-    }
+    const myToken = JSON.parse(localStorage.getItem('token'))
+    return await fetch(`${BASE}/users/me`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${myToken}`
+      },
+    }).then(response => response.json())
+      .then(({id, username}) => {
+        console.log(id, username)
+      })
+      .catch(console.error)
   }
+  
 
 export async function registerUser(username, password) {
   try {

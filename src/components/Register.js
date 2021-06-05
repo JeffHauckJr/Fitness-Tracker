@@ -24,7 +24,7 @@ const RegisterContent = () => {
             .then(({token}) => {
                 if (token) {
                     localStorage.setItem("token", JSON.stringify(token))
-                    window.location.href = "/home";
+                    window.location.href = "/routines";
                 } else {
                     alert('Username or Password Already in Use. Try Again')
                 }

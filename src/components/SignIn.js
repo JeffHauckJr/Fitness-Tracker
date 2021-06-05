@@ -24,6 +24,7 @@ const SignINContent = () => {
             .then(({token}) => {
                 if (token) {
                     localStorage.setItem("token", JSON.stringify(token))
+                    window.location.href = "/routines";
                 } else {
                     alert('Invalid Username or Password')
                 }

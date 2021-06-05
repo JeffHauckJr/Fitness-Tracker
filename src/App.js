@@ -1,7 +1,6 @@
 import "./App.css";
 import Navigation from "./components/Nav";
 import Pages from "./components/Pages";
-import User from "./components/User";
 import {useState} from 'react'
 
 
@@ -34,7 +33,6 @@ function App() {
 				setActivities={setActivities} />
 			</main>
       		<footer className="user-footer" style={{position: 'absolute'}}>
-        			{/* <User /> */}
      		 </footer>
 		</div>
 	);

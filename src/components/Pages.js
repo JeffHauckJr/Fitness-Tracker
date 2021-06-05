@@ -6,14 +6,17 @@ import {
 	MY_ROUTINES_ROUTE,
 	SIGNIN,
 	REGISTER,
+	CREATEROUTINE,
 } from "../constants";
 
 import  HomeContent  from './Home'
 import  ActivitiesContent  from './Activities'
 import  Routines  from './Routines'
-import  MyRoutineContent  from './MyRoutines'
+import  MyRoutineCard  from './MyRoutines'
 import  SignINContent  from './SignIn'
-import  RegistrationContent  from './Register'
+import  RegisterContent  from './Register'
+import  CreateRoutineContent from "./CreateRoutine";
+
 
 const Pages = (props) => {
 	const {routines, setRoutines} = props
@@ -30,7 +33,7 @@ const Pages = (props) => {
 				/>
 			</Route>
 			<Route path={MY_ROUTINES_ROUTE}>
-				<MyRoutineContent />
+				<MyRoutineCard />
 			</Route>
 			<Route path={ACTIVITIES_ROUTE}>
 				<ActivitiesContent 
@@ -42,7 +45,10 @@ const Pages = (props) => {
 				<SignINContent />
 			</Route>
 			<Route path={REGISTER}>
-				<RegistrationContent />
+				<RegisterContent />
+			</Route>
+			<Route path={CREATEROUTINE}> 
+				<CreateRoutineContent />
 			</Route>
 		</>
 	);

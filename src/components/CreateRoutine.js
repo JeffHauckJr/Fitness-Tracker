@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { CREATEROUTINE } from "../constants";
 const BASE = 'https://fitnesstrac-kr.herokuapp.com/api';
  
 const CreateRoutineContent = () => {
   const [name, setName] = useState('');
   const [goal, setGoal] = useState('');
-  const [isPublic, setIsPublic] = useState(false);
+  const [isPublic, setIsPublic] = useState(true);
 
   const createRoutine = async () => {
     const myToken = JSON.parse(localStorage.getItem('token'))
@@ -28,13 +27,13 @@ const CreateRoutineContent = () => {
   };
   const onSubmit = (event) => {
     event.preventDefault();
-	  setIsPublic(true)
+    setIsPublic(true)
     createRoutine();
   };
   return (
     <div>
       <header>
-        <h1>Create Routines</h1>
+        <h1>Create Routine</h1>
       </header>
       <form onSubmit={onSubmit}>
         <label>
@@ -60,9 +59,7 @@ const CreateRoutineContent = () => {
         <br></br>
         <button type="submit">Submit</button>
       </form>
-      <div id=""></div>
     </div>
   );
 };
-
 export default CreateRoutineContent

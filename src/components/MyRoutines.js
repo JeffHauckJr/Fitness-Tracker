@@ -1,33 +1,83 @@
 import { useState, useEffect } from "react";
-import { getMyRoutines } from "../api";
+import axios from 'axios'
+import CreateRoutineContent from "./CreateRoutine";
+import RoutineRow from './RoutineRows'
 const BASE = 'https://fitnesstrac-kr.herokuapp.com/api';
 
+const myUsernameFetch = (myToken) => {
+	try {
+		return axios
+			.get(`${BASE}/users/me`, {
+				headers: {
+					"Content-Type": "application/json",
+					Authorization: `Bearer ${myToken}`,
+				},
+			})
+			.then(({ data: { username } }) => {
+				return username;
+			});
+	} catch (err) {
+		console.error(err);
+	}
+};
 
- 
-const MyRoutineContent = () => {
+const myRoutinesFetch = (username, myToken) => {
+	try {
+		return axios
+			.get(
+				`${BASE}/users/${username}/routines`,
+				{
+					headers: {
+						"Content-Type": "application/json",
+						Authorization: `Bearer ${myToken}`,
+					},
+				}
+			)
+			.then(({ data }) => {
+				return data;
+			});
+	} catch (err) {
+		console.error(err);
+	}
+};
+
+ const MyRoutineContent = () => {
+  let myUsername;
+	const [myRoutines, setMyRoutines] = useState([]);
+
+    useEffect(async () => {
+      const myToken = JSON.parse(localStorage.getItem("token"));
+      if (myToken) {
+        myUsername = await myUsernameFetch(myToken);
+        const routines = await myRoutinesFetch(myUsername ,myToken);
+        setMyRoutines(routines);
+      }
+    }, []);
   
-  const MyRoutineCard = async () => {
-  const [id, setId] = useState()
-  const [username, setUsername] = useState()
+    const onRemoveRoutine = (index) => {
+      const copy = [...myRoutines];
+      copy.splice(index, 1);
+      setMyRoutines(copy);
+    };
 
-  useEffect(() => {
-    getMyRoutines()
-      .then(() => {
-        setId(id)
-      })
-      .then(() => {
-        setUsername(username)
-      })
-      .catch((error) => {
-        console.error(error)
-      })
-  })
-} 
+
   return (
     <div>
-      <button onClick={() => { window.location.href = "/create-routines"}} type={'submit'} onSubmit={(event) => {event.preventDefault();}}>Create Routines</button>
+      <div> 
+        <CreateRoutineContent />
+      </div>
+        {myRoutines.map((routine, index) => {
+            return (
+              <RoutineRow
+								key={routine.id}
+								routine={routine}
+								onRemoveRoutine={() => {
+									onRemoveRoutine(index);
+								}}
+							/>
+            )
+        })}
     </div>
   );
 };
-
 export default MyRoutineContent;

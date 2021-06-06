@@ -11,7 +11,7 @@ const Routines = ({ routines, setRoutines }) => {
       .catch((error) => {
         console.error(error);
       });
-  });
+  }, [setRoutines]);
   return (
     <>
       <div className="page-head">

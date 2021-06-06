@@ -47,9 +47,9 @@ const Pages = (props) => {
 			<Route path={REGISTER}>
 				<RegisterContent />
 			</Route>
-			<Route path={CREATEROUTINE}> 
+			{/* <Route path={CREATEROUTINE}> 
 				<CreateRoutineContent />
-			</Route>
+			</Route> */}
 		</>
 	);
 };

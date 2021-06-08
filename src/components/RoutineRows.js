@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { getActivities } from "../api";
+import  AddActivityToRoutine  from './RoutineDropdown'
 import {
   Create as CreateIcon,
   Save as SaveIcon,
   Delete as DeleteIcon,
 } from "@material-ui/icons";
-import './RoutineRows.css'
+import "./RoutineRows.css";
 import { ROUTINES_ROUTE } from "../constants";
+
+
 const BASE = "https://fitnesstrac-kr.herokuapp.com/api";
 
 const RoutineRow = ({
@@ -16,6 +20,7 @@ const RoutineRow = ({
   const [routineName, setRoutineName] = useState(name);
   const [routineGoal, setRoutineGoal] = useState(goal);
   const [editMode, setEditMode] = useState(false);
+
 
   const onEdit = () => {
     setEditMode(true);
@@ -117,6 +122,7 @@ const RoutineRow = ({
             }}
           />
         </div>
+            <AddActivityToRoutine />
       </div>
     </div>
   );

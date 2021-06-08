@@ -29,14 +29,15 @@ const CreateRoutineContent = () => {
     event.preventDefault();
     setIsPublic(true)
     createRoutine();
+    window.location.href = "/my-routines";
   };
   return (
     <div>
       <header>
-        <h1>Create Routine</h1>
+        <h1 style={{color: 'white'}}>Create Routine</h1>
       </header>
       <form onSubmit={onSubmit}>
-        <label>
+        <label style={{color: 'white'}}>
           Name:
           <input
             type="Name"
@@ -47,7 +48,7 @@ const CreateRoutineContent = () => {
         </label>
         <br></br>
         <br></br>
-        <label>
+        <label style={{color: 'white'}}>
           Goal:
           <input
             type="Goal"
@@ -57,7 +58,7 @@ const CreateRoutineContent = () => {
           ></input>
         </label>
         <br></br>
-        <button type="submit">Submit</button>
+        <button type="submit" style={{marginLeft: '175px'}}>Submit</button>
       </form>
     </div>
   );

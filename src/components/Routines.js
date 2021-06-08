@@ -15,7 +15,7 @@ const Routines = ({ routines, setRoutines }) => {
   return (
     <>
       <div className="page-head">
-        <h1>Routines</h1>
+        
       </div>
       <div id="routines-container">
         {routines.map((routine) => (

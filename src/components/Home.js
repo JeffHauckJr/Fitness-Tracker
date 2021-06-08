@@ -1,10 +1,10 @@
 const HomeContent = () => {
     return (
-        <div>
+        <div stle={{}}>
             <header>
-            <h1>Fitness Tracker Home Page</h1>
+            <h1 style={{fontSize: '50px', textDecoration: 'bold'}}>Fitness Tracker</h1>
             </header>
-            <main>
+            <main style={{marginTop: '30px', fontSize: '35px'}}>
                 <p>Track Your Routines and Compare with others!</p>
                 <br></br>
                 <p>Log In to Update Your Routines and Activities!</p>

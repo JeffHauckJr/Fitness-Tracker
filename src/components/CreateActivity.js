@@ -32,10 +32,10 @@ const CreateActivityContent = () => {
         return (
             <div>
               <header>
-                <h1>Create Activity</h1>
+                <h1 style={{color: 'white'}}>Create Activity</h1>
               </header>
               <form onSubmit={onSubmit}>
-                <label>
+                <label style={{color: 'white'}}>
                   Name:
                   <input
                     type="Name"
@@ -46,7 +46,7 @@ const CreateActivityContent = () => {
                 </label>
                 <br></br>
                 <br></br>
-                <label>
+                <label style={{color: 'white'}}>
                   Goal:
                   <input
                     type="Goal"

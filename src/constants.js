@@ -4,4 +4,3 @@ export const MY_ROUTINES_ROUTE = "/my-routines";
 export const ACTIVITIES_ROUTE = "/activities";
 export const SIGNIN = "/sign-in"
 export const REGISTER = "/register"
-export const CREATEROUTINE = "/create-routine"

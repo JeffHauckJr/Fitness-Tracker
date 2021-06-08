@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react'
+import {useEffect} from 'react'
 import { getActivities } from "../api";
 import CreateActivityContent from './CreateActivity';
 
@@ -12,14 +12,14 @@ const ActivitiesContent = ({activities, setActivities}) => {
 		  .catch((error) => {
 			  console.error(error)
 		  });
-	  }, []);
+	  }, [setActivities]);
 	return (
 		<>
 		<div>
 			<CreateActivityContent />
 		</div>
 		<div className="page-head">
-		  <h1>Activities</h1>
+		  
 		</div>
 		
 		<div id="routines-container">

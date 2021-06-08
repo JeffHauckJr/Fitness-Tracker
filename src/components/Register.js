@@ -1,4 +1,4 @@
-import {useEffect ,useState} from 'react'
+import {useState} from 'react'
 const BASE = 'https://fitnesstrac-kr.herokuapp.com/api';
                                           
 
@@ -40,19 +40,19 @@ const RegisterContent = () => {
 	return (
         <div>
             <header>
-                <h1>Register</h1>
+                <h1 style={{color: 'white'}}>Register</h1>
             </header>
             <form onSubmit={onSubmit} >
-                <label>Username
-                <input type='Username' onInput={(event) => {setUsername(event.target.value)}}></input>
+                <label style={{color: 'white'}}>Username
+                <input  type='Username'  onInput={(event) => {setUsername(event.target.value)}}></input>
                 </label>
                 <br></br>
                 <br></br>
-                <label>Password   
-                <input type='Password' onInput={(event) => {setPassword(event.target.value)}}></input>
+                <label style={{color: 'white'}}>Password   
+                <input type='Password'  onInput={(event) => {setPassword(event.target.value)}}></input>
                 </label>
                 <br></br>
-                <button type='submit'>Submit</button>
+                <button type='submit' style={{marginLeft: '170px', marginTop: '10px'}}>Submit</button>
             </form>
 
         </div>

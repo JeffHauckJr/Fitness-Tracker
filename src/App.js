@@ -25,7 +25,7 @@ function App() {
 			<header className='header' style={{backgroundColor: 'black'}}>
 				<Navigation />
 			</header>
-			<main style={{ marginTop: "100px", display: 'flex' , justifyContent: 'center' }}>
+			<main style={{ marginTop: "100px", justifyContent: 'center', alignItems: 'center'}}>
 				<Pages
 				routines={routines}
 				setRoutines={setRoutines}
